@@ -472,9 +472,18 @@ li{
     font-family: Arial, Helvetica, sans-serif;
 }
 #about .circle--portrait{
-    height: 300px;
-    width: 300px;
+    display: inline-block;
+    align-items: center;
+    position: relative;
+    max-width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
     vertical-align: middle;
+}
+.circle--portrait img{
+    width: 100%;
+    height: auto;
 }
 
 @media (min-width:1024px) {
