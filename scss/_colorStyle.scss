@@ -1,0 +1,66 @@
+$primary: #4154f1;
+$subColor-0: #ffffff;
+$subColor-1: #dddddd;
+$subColor-2: #fffb1d;
+$accentColor: #1dffa1;
+
+$font-1: #01163de6;
+$font-2: #ffffff;
+$font-3: #aaaaaa;
+$font-4: #3b3b3b;
+
+$border-1: #01163de6;
+
+$shadow-1: #030d1e40;
+
+$popupBG: #000000b4;
+
+
+//textStyle
+.section-title {
+    color: $primary;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 auto 2vw;
+    position: relative;
+
+    &:not(.noDeco) {
+
+        &::before {
+            content: "";
+            width: 130%;
+            height: 1px;
+            background: $shadow-1;
+            position: absolute;
+            bottom: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &::after {
+            content: "";
+            width: 30%;
+            height: 5px;
+            background: $font-1;
+            position: absolute;
+            bottom: -35%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+}
+
+//Btn
+.btnType-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $primary;
+    border-radius: 5px;
+    color: $font-2;
+
+    &:hover {
+        color: $subColor-2;
+    }
+}

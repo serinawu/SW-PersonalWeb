@@ -1,0 +1,16 @@
+@mixin media($max-width) {
+    $max-width-withUnit: #{$max-width}px;
+
+    @media screen and (max-width: #{$max-width-withUnit}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: 992px) {
+    }
+}
+@mixin ipad {
+    @media (max-width: 768px) {
+    }
+}

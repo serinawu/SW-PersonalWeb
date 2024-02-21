@@ -4,20 +4,16 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <link rel="icon" type="image/png" href="">
-
         <title>Serina Wu | Web Developer</title>
-        <!-- TODO:add somecode key word below -->
-        <meta name="keywords" content="[username],[name],skill">
-        <!-- TODO:improve your SEO by adding a small description of you -->
+        <meta name="keywords" content="[Serina Wu],skill">
         <meta name="description" content="Serina Wu|Web Developer">
-
         <!-- Favicon -->
         <link href="" rel="icon">
         <link href="" rel="apple-touch-icon">
-        <!-- bootstrap -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- CSS -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/2bd8048d04.js" crossorigin="anonymous"></script>
         <!-- Google fronts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,358 +25,257 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
     </head>
-
-    <body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+    <body>
         <!-- navbar -->
-        <header id="header" class="header fixed-top header-scrolled">
-            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-                <a href="index.html" class="logo d-flex align-itmes-center">
-                    <!-- <img src="" alt="logo"> -->
-                    <span id="head-s">Serina Wu</span>
-                </a>
-                <nav id="navbar" class="navbar">
-                    <ul>
-                        <li>
-                            <a class="nav-link scrollto active" href="#about">關於我</a>
-                        </li>
-                        <li class="dropdown">
-                            <a class="nav-link scrollto" href="#gallery">
-                                <span>專案作品</span>
-                                <i class="bi bi-chevron-down"></i>
-                            </a>
+        <header id="header">
+            <a href="index.html" class="logo d-flex align-itmes-center">Serina Wu</a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li>
+                        <a href="#about">關於我</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#gallery">
+                            <span>專案作品</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#movie">電影平台</a>
+                            </li>
+                            <li>
+                                <a href="#chatroom">聊天室</a>
+                            </li>
+                            <li>
+                                <a href="#weather">天氣預報</a>
+                            </li>
+                            <li>
+                                <a href="#musicPlayer">音樂播放器</a>
+                            </li>
+                            <li>
+                                <a href="#backStage">後台管理系統</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#resume">經歷</a>
+                    </li>
+                    <li>
+                        <a href="#contact">聯絡資訊</a>
+                    </li>
+                    <li>
+                        <a class="cv btnType-1" target="_blank" href="https://drive.google.com/file/d/1ofAN4nf92WNJLzoyEiAHBkKgGyZhozRR/view?usp=sharing">履歷</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main">
+            <section id="hero">
+                <canvas id="projector" width="100%" height="100%">Your browser does not support the Canvas element.</canvas>
+                <div class="container">
+                    <h1 class="name">Serina Wu</h1>
+                    <h3 class="greeting">我是您要找的<span>前端工程師</span>!</h3>
+                    <a href="#about" class="btnType-1">瞭解更多</a>
+                </div>
+            </section>
+            <!-- About -->
+            <section id="about">
+                <div class="container">
+                    <div class="circle-portrait"></div>
+                    <div>
+                        <p class="section-title noDeco">關於我</p>
+                        <!-- 自介段落 -->
+                        <p>您好，目前作為前端工程師的經驗為1年以上；就職期間負責公司的網頁切版，原公司使用的技術較為保守：明白有其局限性因此利用下班時間自學業界所需技能。雖有不足之處，如有機會成為貴司的一份子一定積極進取補足自身尚缺的技能。</p>
+                        <p>由於還在職中，原工作內容不便公開；若有機會與貴司面談將竭誠展示相關類似案例。</p>
+                        <p>以下是我的自學專案，供您參考。</p>
+                    </div>
+                </div>
+            </section>
+            <!-- 專案作品集 -->
+            <section id="gallery">
+                <div class="container">
+                    <p class="section-title">專案作品</p>
+                    <div class="project">
+                        <div class="info">
+                            <p>電影平台</p>
+                            <span>使用Bootstrap及JavaScript快速搭建網頁，並運用API獲取電影資料</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="info">
+                            <p>聊天室</p>
+                            <span>使用JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="info">
+                            <p>天氣預報</p>
+                            <span>使用JavaScript以及搭配串接定位、天氣API</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="info">
+                            <p>音樂播放器</p>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="info">
+                            <p>後台管理系統</p>
+                            <span>使用VUE3練習搭建後台</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="info">
+                            <p>求職網站</p>
+                            <span>使用NUXT搭配Pinia狀態管理架設網站。版型也是我規劃設計的，雖然此專案最後終止了；從中學到很多！</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 簡歷 -->
+            <section id="resume">
+                <div class="container">
+                    <p class="section-title">經歷</p>
+                    <div>
+                        <h4 class="resume-title">工作經歷</h4>
+                        <div class="resume-items">
+                            <p class="name">
+                                ＊設計文創公司
+                                <span class="job-title">前端工程師</span>
+                            </p>
+                            <p class="duration">2022/07/01 ~ 迄今</p>
                             <ul>
-                                <li>
-                                    <a href="#gallery">網頁專案</a>
+                                <li>網頁切版/網站維護/版型架構規劃/站務資料文件彙整</li>
+                                <li class="skills">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>SCSS</span>
+                                    <span>JQuery</span>
+                                    <span>JavaScript</span>
+                                    <a href="https://swiperjs.com/" target="_blank">Swiper</a>
+                                    <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>
+                                    <a href="https://www.chartjs.org/" target="_blank">Chart.js</a>
                                 </li>
-                                <li>
-                                    <a href="#gallery">視覺平面設計</a>
+                                <li class="design">
+                                    <p>設計圖軟體</p>
+                                    <span>PhotoShop</span>
+                                    <span>Illustrator</span>
+                                    <span>XD</span>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <a class="nav-link scrollto" href="#resume">經歷</a>
-                        </li>
-                        <li>
-                            <a class="nav-link scrollto" href="#contact">聯絡資訊</a>
-                        </li>
-                        <li>
-                            <a class="cv scrollto active" target="_blank" href="https://drive.google.com/file/d/1ofAN4nf92WNJLzoyEiAHBkKgGyZhozRR/view?usp=sharing">履歷</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <!-- first interduce -->
-        <sectioin id="hero" class="hero d-flex align-items-center">
-            <canvas id="projector" width="100%" height="100%">Your browser does not support the Canvas element.</canvas>
-            <div class="container">
-                    <div class="flex-column justify-content-center">
-                            <h1 data-aos="fade-up" class="aos-init aos-animate">
-                                <span class="text-color-main">Serina Wu</span>
-                            </h1>
-                            <h3 data-aos="fade-up" class="aos-init aos-animate">我是您要找的 前端工程師!</h3>
-                        <div data-aos="fade-up" data-aos-delay="600" class="aos-init aos-animate">
-                            <div class="text-center text-lg-start">
-                                <a href="#about" class="btn-knowmore scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                    <span>瞭解更多</span>
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="resume-items">
+                            <p class="name">
+                                驓勤爵也國際有限公司
+                                <span class="job-title">資訊助理</span>
+                            </p>
+                            <p class="duration">2018/10 - 2022/05/20</p>  
+                            <ul>
+                                <li>工程部門資訊管理/產品(網頁)測試/需求彙整</li>
+                                <li>視覺指導/財務報表核對/零用金管理</li>
+                            </ul>
+                        </div>
+                        <div class="resume-items">
+                            <p class="name">
+                                巴爾巴創意開發管理顧問
+                                <span class="job-title">專案執行</span>
+                            </p>
+                            <p class="duration">2018/06 - 2018/08</p>
+                            <ul>
+                                <li>政府標案企劃協助/新聞稿撰寫/標案活動支援</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-        </sectioin>
-     <main id="main">
-        <!-- About -->
-        <section id="about">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-6 col-sm-12">
-                            <img class="circle--portrait" src="src/sportrait.png" alt="">
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="flex-column justify-content-center">
-                                <h2 class="col-md-6 col-sm-12 react-reveal section title" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 300ms; animation-iteration-count:1 ; opacity: 1; animation-name: rect-reveal-911278893847556-2; padding-left: 0px; color:#4154f1;">
-                                    關於我
-                                </h2>
-                            <!-- 自介段落 -->
-                            <p class="about-wrapper_info-text">您好，我於2018年畢業於臺中教育大學美術學系，明白現在的趨勢是IT科技時代：因此上份工作轉職擔任資訊助理一職；我於前份工作單位就職三年多；過程中學到許多綜合的資訊知識，就職期間所負責的工作為行政處理甚至財務對帳、整理相關的技術文件、測試產品 (網頁)。然而了解這個職位有他的侷限性，比起這樣的職務性質更想開發新技能加上自己多年學習藝術累積的美學素養 ──前端工程師</p>
-                            <p class="about-wrapper_info-text">為達此目標，一直都有利用下班之餘修習國外的線上課程:<br/><span><i><a href="https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/" targrt="_blank"
-                                >The Complete Web Developer in 2022: Zero to Mastery</a></i></span>。雖還有很多不足之處，但一定竭盡所能發揮學習樂誠：補足自身尚缺的技能。</p>
-                            <p class="about-wrapper_info-text">以下是我的習作專案，供您參考。</p>
-                            <!-- <span class="d-flex mt-3"><a target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn--resume" </span> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 專案作品集 -->
-        <section id="gallery">
-            <div class="container">
-                <div class="section-title">
-                    <h2 class="react-reveal" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 300ms; animation-iteration-count:1 ; opacity: 1; animation-name: rect-reveal-911278893847556-2; padding-left: 0px; color:#4154f1">專案作品</h2>
-                </div>
-                <div class="row">
-                    <div class="gallery-filter">
-                      <span class="filter-item active" data-filter="all">all</span>
-                      <span class="filter-item" data-filter="web">網頁</span>
-                      <span class="filter-item" data-filter="grafic">平面設計</span>
-                      <span class="filter-item" data-filter="photo">攝影</span>
-                    </div>
-                   </div>
-                 <div class="row">
-                    <div class="col-lg-4 col-md-6 gallery-item web">
-                        <div class="gallery-item-inner">
-                            <div class="cptn11">
-                                    <img src="src/MTG.png">
-                                    <div class="ovrly">
-                                        <div class="cptn">
-                                            <div>
-                                                <a href="https://serinawu.github.io/MTG-web/" target="_bank"><h3>麥田國際</h3></a>
-                                                <p>使用HTML/CSS進行切版練習</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                     </div>
-                    <div class="col-lg-4 col-md-6 gallery-item web">
-                        <div class="gallery-item-inner">
-                            <div class="cptn11">
-                                <img src="src/wlkg-small.png">
-                                <div class="ovrly">
-                                    <div class="cptn">
-                                        <div>
-                                            <a href="https://serinawu.github.io/WLKG-web/" target="_bank"><h3>臥龍控股</h3></a>
-                                            <p>使用HTML/CSS進行切版練習</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                </div>
-                     <div class="col-lg-4 col-md-6 gallery-item web">
-                        <div class="gallery-item-inner">
-                            <div class="cptn11">
-                                <img src="src/gotoway-small.png">
-                                <div class="ovrly">
-                                    <div class="cptn">
-                                        <div>
-                                            <a href="https://serinawu.github.io/GOTOWAY-web/" target="_bank"><h3>GOTOWAY</h3></a>
-                                            <p>使用HTML/CSS進行切版練習</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item grafic">
-                        <div class="gallery-item-inner">
-                            <img src="src/塵寰海報.png">
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item grafic">
-                        <div class="gallery-item-inner">
-                            <img src="src/瘋字型講座海報.jpg">
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item grafic">
-                        <div class="gallery-item-inner">
-                            <img src="src/WAYD.jpg">
-                        </div>
-                    </div>    
-                     <div class="col-lg-4 col-md-6 gallery-item photo">
-                        <div class="gallery-item-inner">
-                            <img src="src/2014.jpg">
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item photo">
-                        <div class="gallery-item-inner">
-                            <img src="src/2015.jpg">
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item photo">
-                        <div class="gallery-item-inner">
-                            <img src="src/2015-2.jpg">
-                        </div>
-                     </div>
-                     
-                     <div class="col-lg-4 col-md-6 gallery-item photo">
-                        <div class="gallery-item-inner">
-                            <img src="src/2015-4.jpg">
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item photo">
-                        <div class="gallery-item-inner">
-                            <img src="src/2015-5.jpg">
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item photo">
-                        <div class="gallery-item-inner">
-                            <img src="src/2015-6.jpg">
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item photo">
-                        <div class="gallery-item-inner">
-                            <img src="src/2016.jpg">
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item photo">
-                        <div class="gallery-item-inner">
-                            <img src="src/2015-3.jpg">
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 gallery-item photo">
-                        <div class="gallery-item-inner">
-                            <img src="src/2015-7.jpg">
-                        </div>
-                     </div>
-            </div>
-        </section>
-        <!-- 簡歷 -->
-        <section id="resume">
-            <div class="container">
-                <div class="section-title">
-                <h2 class="react-reveal" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 300ms; animation-iteration-count:1 ; opacity: 1; animation-name: rect-reveal-911278893847556-2; padding-left: 0px; color:#4154f1;">經歷</h2>
-                </div>
-                <div class="row">
-                    <div id="rs-12"class="col-lg-6 aos-init aos-animate" data-aos="fade-up">
+                    <div>
                         <h4 class="resume-title">學歷</h4>
                             <div class="resume-items">
                                 <!-- 校名 -->
-                                <span id="tit-name"><strong>國立臺中教育大學</strong></span>
-                                <h6>美術學系 設計組</h6><br/>
-                                    <i>2013 - 2017</i>
-                                    <br/>
-                                    <p class="exhibtion">展覽</p>
-                                    <ul id="ex-ul">
-                                        <li>· 塵寰｜臺中教育大學美術學系106屆畢業展</li>
-                                        <li>· 參拾月,藺生｜臺中教育大學美術學系106級班展</li>
-                                    </ul>
+                                <p class="name">國立臺中教育大學
+                                    <span>美術學系 設計組</span>
+                                </p>
+                                <p class="duration">2013 - 2017</p>
+                                <p class="exhibition">展覽</p>
+                                <ul>
+                                    <li>塵寰｜臺中教育大學美術學系106屆畢業展</li>
+                                    <li>參拾月,藺生｜臺中教育大學美術學系106級班展</li>
+                                </ul>
                             </div>
                             <div id="res-last" class="resume-items">
-                                <span id="tit-name"><strong>桃園市立南崁高級中學</strong></span>
-                                <h6>美術班</h6><br/>
-                                <i>2010 -2013</i>
-                                <br/>
-                                <p class="exhibtion">展覽</p>
-                                <ul id="ex-ul">
-                                    <li>· What art you doning? | 桃園縣立南崁高中第十屆美術畢業展</li>
-                                    <li>· 第六屆勝安藝術獎</li>
+                                <p class="name">桃園市立南崁高級中學
+                                    <span>美術班</span>
+                                </p>
+                                <p class="duration">2010 - 2013</p>
+                                <p class="exhibition">展覽</p>
+                                <ul>
+                                    <li>What art you doing? | 桃園縣立南崁高中第十屆美術畢業展</li>
+                                    <li>第六屆勝安藝術獎</li>
                                 </ul>
                             </div>
                     </div>
-                    <div id="rs-12" class="col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                        <h4 class="resume-title">工作經歷</h4>
-                        
-                            <!-- 公司名 -->
-                            <div class="resume-items">
-                            <span id="tit-name"><strong>驓勤爵也國際有限公司</strong></span><h6>資訊助理</h6>
-                            <div class="re-work">
-                                <i>2018/10 - 2022/05/20</i>
-                                <ul>
-                                    <li>· 工程部門資訊管理/產品(網頁)測試/需求彙整</li>
-                                    <li>· 視覺指導/財務報表核對/零用金管理</li>
-                                </ul>
-                          </div>  
-                        </div>
-                          <div class="resume-items">
-                            <span id="tit-name"><strong>巴爾巴創意開發管理顧問</strong></span><h6>專案執行</h6>
-                            <div class="re-work">
-                                <i>2018/06 - 2018/08</i>
-                                <ul>
-                                    <li>· 政府標案企劃協助/新聞稿撰寫/標案活動支援</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="res-last" class="resume-items">
-                            <span id="tit-name"><strong>小毛日子雜貨店</strong></span>
-                            <h6>門市人員 / 手作課程老師</h6>
-                                <div class="re-work">
-                                    <i>2017/06 - 2018/04</i>
-                                    <ul>
-                                        <li>· 店面銷售管理/商品存貨清點/手作課程授課與規劃</li>
-                                        <li>· 活動課程宣傳海報設計製作/指導工讀生</li>
-                                    </ul>
-                                </div>
-                        </div>
-                </div>   
-            </div>
-        </section>
-    </main>
-    <!-- contact -->
-    <section id="contact">
-        <div class="container aos-init aos-animate" data-aos="fade-up">
-                <div class="section-title">
-                    <h2 class="react-reveal" style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 300ms; animation-iteration-count:1 ; opacity: 1; animation-name: rect-reveal-911278893847556-2; padding-left: 0px; color:#4154f1">聯絡資訊</h2>
                 </div>
-            <div class="row">
-                <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up">
+            </section>
+            <!-- contact -->
+            <section id="contact">
+                <div class="container">
+                    <p class="section-title">聯絡資訊</p>
                     <div class="content-items">
                         <div class="address">
-                            <i class="bi bi-geo-alt"><img src="src/geo-alt.svg"></img></i>
+                            <i class="fa-solid fa-location-dot"></i>
                             <h4>Location</h4>
-                            <p>Taiwan, Taichuang</p>
+                            <p>Taiwan, Taichung</p>
                         </div>
                         <div class="email">
-                            <i class="bi bi-envelope"><img src="src/envelope.svg"></img></i>
+                            <i class="fa-solid fa-envelope"></i>
                             <h4>Email</h4>
                             <p>serina.wph@gmail.com</p>
                         </div>
                         <div class="phone">
-                            <i class="bi bi-telephone"><img><img src="src/telephone.svg"></img></i>
+                            <i class="fa-solid fa-phone"></i>
                             <h4>Call</h4>
                             <p>+886956821688</p>
                         </div>
                     </div>
-                 </div>
-                 <div class="col-lg-8 aos-init aos-animate" data-aos="fade-up">
                     <form action="form/contact.php" method="post" role="form" class="php-emil-form">
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" name="firstname" class="form-control" id="name" placeholder="姓名" required>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" name="email" class="form-control" id="email" placeholder="信箱" required>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <input type="text" name="subject" class="form-control" id="subject" placeholder="主旨" required>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <textarea name="message" class="form-control" id="message" placeholder="訊息" required></textarea>
-                            </div>
-                        </div>
+                        <label>
+                            <input type="text" name="firstName" class="form-control" id="name" placeholder="姓名" required>
+                        </label>
+                        <label>
+                            <input type="text" name="email" class="form-control" id="email" placeholder="信箱" required>
+                        </label>
+                        <label>
+                            <input type="text" name="subject" class="form-control" id="subject" placeholder="主旨" required>
+                        </label>
+                        <label>
+                            <textarea name="message" id="message" placeholder="訊息" required></textarea>
+                        </label>
+                        <button type="submit" class="btnType-1">傳送</button>
                     </form>
-                    <!-- <div class="notice-3">
-                        <div class="loading">傳送中</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">您的訊息已送出，謝謝！</div>
-                    </div> -->
-                    <div class="text-center">
-                        <button id="sub-b" type="submit">傳送</button>
-                    </div>
-                 </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <span>Serina Wu</span>
+                <div class="social-links">
+                    <a href="https://github.com/serinawu" target="_blank" class="github" alt="github">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/serina-wu-43251120a" target="_blank" alt="linkedin" class="linkedin">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://t.me/lserinal" class="telegram" target="_blank" alt="telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </div>
+                <p class="copyright">©Copyright.All Rights Reserved</p>
             </div>
+        </footer>
+        <div class="popup">
+            <div class="popup_model display"></div>
         </div>
-    </section>
-    <section id="footer">
-        <div class="container">
-            <span class="text-color-main">Serina Wu</span>
-            <div class="social-links">
-                <a href="https://github.com/serinawu" target="_blank" class="github" alt="github"><i class="c-icon"><img src="src/github.png" alt="github"></i></a>
-                <a href="https://www.linkedin.com/in/serina-wu-43251120a" target="_blank" alt="linkedin" class="linkedin"><i class="c-icon"><img src="src/linkedin.png" alt="linkedin"></i></a>
-                <a href="https://t.me/lserinal" class="telegram" target="_blank" alt="telegram"><i class="c-icon"><img src="src/telegram.png" alt="telegram"></i></a>
-            </div>
-            <div class="copyright">©Copyright.All Rights Reserved</div>
-        </div>
-    </section>
-    <a href="#" id="ba-top" class="back-to-top d-flex align-items-center justify-content-center active">↑</a>
-<script src="js/lanrenzhijia.js"></script>
-<script src="js/gallery-filter.js"></script>
-
-</body>
+        <a id="back-to-topBtn" class="back-to-topBtn btnType-1">↑</a>
+        <script src="./js/canvas.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
 </html>
