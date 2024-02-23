@@ -36,8 +36,8 @@
                     </li>
                     <li class="dropdown">
                         <a href="#gallery">
-                            <span>專案作品</span>
-                            <i class="bi bi-chevron-down"></i>
+                            專案作品
+                            <i class="fa-solid fa-caret-down"></i>
                         </a>
                         <ul>
                             <li>
@@ -98,7 +98,7 @@
                     <div class="project">
                         <div class="info">
                             <p>電影平台</p>
-                            <span>使用Bootstrap及JavaScript快速搭建網頁，並運用API獲取電影資料</span>
+                            <span>運用API獲取電影資料</span>
                         </div>
                     </div>
                     <div class="project">
@@ -122,7 +122,7 @@
                     <div class="project">
                         <div class="info">
                             <p>後台管理系統</p>
-                            <span>使用VUE3練習搭建後台</span>
+                            <span>使用VUE3搭配Element UI搭建後台</span>
                         </div>
                     </div>
                     <div class="project">
@@ -271,8 +271,140 @@
                 <p class="copyright">©Copyright.All Rights Reserved</p>
             </div>
         </footer>
-        <div class="popup">
-            <div class="popup_model display"></div>
+        <div class="popup display">
+            <div class="popup_model display">
+                <i class="fa-regular fa-circle-xmark close_popupBtn"></i>
+                <div class="projectName">
+                    <p>天氣預報</p>
+                </div>
+                <div class="project_container">
+                    <div class="outer weather display">
+                        <div class="main_wrap">
+                            <div class="top">
+                                <div class="weather_logo">
+                                    <i class="fa-solid fa-cloud-sun-rain"></i>
+                                    <p>Weather io</p>
+                                </div>
+                                <div>
+                                    <label>
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <input class="searchBar" placeholder="search city">
+                                    </label>
+                                    <button type="button" class="current_locate">
+                                        <i class="fa-solid fa-location-crosshairs"></i>
+                                        Current Location
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="sideLeft">
+                                    <div class="nowBlock">
+                                        <div class="column">
+                                            <p>Now</p>
+                                            <span class="temperature">5</span>
+                                            <div class="weather_pic"></div>
+                                            <span class="weather-state">Broken Clouds</span>
+                                        </div>
+                                        <div class="row">
+                                            <i class="fa-regular fa-calendar"></i>
+                                            <span class="today">Thursday 22, Feb</span>
+                                        </div>
+                                        <div class="row">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span class="located">Taiwan, Taichung</span>
+                                        </div>
+                                    </div>
+                                    <div class="fiveDays">
+                                        <p>5 days Forecast</p>
+                                        <ul class="fiveDays_list">
+                                            <li>
+                                                <div class="weather_group">
+                                                    <i class="weather_img"></i>
+                                                    <p class="temper">19</p>
+                                                </div>
+                                                <p class="date">22 Feb</p>
+                                                <p class="days">THU</p>
+                                            </li>
+                                            <li>
+                                                <div class="weather_group">
+                                                    <i class="weather_img"></i>
+                                                    <p class="temper">19</p>
+                                                </div>
+                                                <p class="date">22 Feb</p>
+                                                <p class="days">THU</p>
+                                            </li>
+                                            <li>
+                                                <div class="weather_group">
+                                                    <i class="weather_img"></i>
+                                                    <p class="temper">19</p>
+                                                </div>
+                                                <p class="date">22 Feb</p>
+                                                <p class="days">THU</p>
+                                            </li>
+                                            <li>
+                                                <div class="weather_group">
+                                                    <i class="weather_img"></i>
+                                                    <p class="temper">19</p>
+                                                </div>
+                                                <p class="date">22 Feb</p>
+                                                <p class="days">THU</p>
+                                            </li>
+                                            <li>
+                                                <div class="weather_group">
+                                                    <i class="weather_img"></i>
+                                                    <p class="temper">19</p>
+                                                </div>
+                                                <p class="date">22 Feb</p>
+                                                <p class="days">THU</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sideRight">
+                                    <div class="block">
+                                        <div class="wind_block">
+                                            <i class="fa-solid fa-wind"></i>
+                                            <p id="wind_speed">3.90 7.75 33.6 38.6</p>
+                                        </div>
+                                        <div class="sunRise_block">
+                                            <i class="fa-regular fa-sun"></i>
+                                            <p id="sunrise_time">6:46</p>
+                                        </div>
+                                        <div class="sunset_block">
+                                            <i class="fa-regular fa-moon"></i>
+                                            <p id="sunset_time">6:46</p>
+                                        </div>
+                                        <div class="sunset_block">
+                                            <i class="fa-solid fa-droplet"></i>
+                                            <p id="sunset_time">6:46</p>
+                                        </div>
+                                        <div class="sunset_block">
+                                            <i class="fa-solid fa-water"></i>
+                                            <p id="sunset_time">6:46</p>
+                                        </div>
+                                        <div class="sunset_block">
+                                            <i class="fa-regular fa-eye"></i>
+                                            <p id="sunset_time">6:46</p>
+                                        </div>
+                                        <div class="sunset_block">
+                                            <i class="fa-solid fa-temperature-quarter"></i>
+                                            <p id="sunset_time">6:46</p>
+                                        </div>
+                                    </div>
+                                    <div class="block">
+                                        <p>Today at</p>
+                                        <div class="group">
+                                            <p>9pm</p>
+                                            <div class="weather_img"></div>
+                                            <p>5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <a id="back-to-topBtn" class="back-to-topBtn btnType-1">↑</a>
         <script src="./js/canvas.js"></script>

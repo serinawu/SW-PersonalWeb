@@ -46,6 +46,14 @@ showProjects.forEach(project => {
     });
 });
 
+//關閉專案
+const closePopup = document.querySelector('.close_popupBtn');
+
+closePopup.addEventListener('click', function(event){
+    const popup = document.querySelector('.popup');
+    popup.classList.remove('display');
+});
+
 //back-to-topBtn
 const backTop = document.getElementById('back-to-topBtn');
 

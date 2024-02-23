@@ -3,27 +3,74 @@
     width: 100%;
     height: 100vh;
     background: $popupBG;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     z-index: 666;
     top: 0;
     left: 0;
 
     &.display {
-        display: block;
+        display: flex;
     }
 
     &>.popup_model {
         display: none;
-        width: 30%;
-        height: 30%;
+        width: auto;
+        height: auto;
         background: $subColor-0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
 
         &.display {
             display: block;
+        }
+
+        &>.close_popupBtn {
+            color: $font-2;
+            font-size: 1.6rem;
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            cursor: pointer;
+        }
+
+        &>.projectName {
+            background: $primary;
+            border-radius: 0 30vw 30vw 0;
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            z-index: 777;
+
+            &>p {
+                width: 100%;
+                box-shadow: 0 0 10px $shadow-1;
+                color: $font-2;
+                font-size: 1.125rem;
+                font-weight: bold;
+                text-align: center;
+                padding: 1vw 2vw;
+            }
+        }
+
+        &>.project_container {
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+
+            &>.outer {
+                display: none;
+
+                &.display {
+                    display: block;
+                }
+
+                &.weather {
+                    width: 90vw;
+                    height: 90vh;
+                    @include weather;
+                }
+            }
         }
     }
 }
