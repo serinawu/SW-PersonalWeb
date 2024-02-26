@@ -275,10 +275,82 @@
             <div class="popup_model display">
                 <i class="fa-regular fa-circle-xmark close_popupBtn"></i>
                 <div class="projectName">
-                    <p>天氣預報</p>
+                    <p>電影平台</p>
                 </div>
                 <div class="project_container">
-                    <div class="outer weather display">
+                    <div class="outer movie">
+                        <div class="bg-img">
+                            <div class="nav">
+                                <span><a href="#">Home</a></span>
+                                <span><a href="#">Movies</a></span>
+                                <div class="movie_logo">
+                                    <i class="fa-brands fa-neos"></i>
+                                    <p>NetFilm</p>
+                                </div>
+                                <span><a href="#">Series</a></span>
+                                <span><a href="#">Kids</a></span>
+                            </div>
+                            <section class="content-section">
+                                <div class="info-container">
+                                    <div class="details-container">
+                                        <div class="logo-container title-info">
+                                            <h1></h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="title-info-metaData-wrapper">
+                                    <span class="title-info-metadata-item item-year">
+                                        <span class="release_Date"></span>
+                                    </span>
+                                    <span class="info-spacer"> | </span>
+                                    <span class="title-info-metadata-item item-maturity">
+                                        <span class="maturity-number"></span>
+                                    </span>
+                                    <span class="info-spacer"> | </span>
+                                    <span class="title-info-metadata-item item-vote">
+                                        <span class="duration-vote-average"></span>
+                                    </span>
+                                    <span class="info-spacer"> | </span>
+                                    <span class="title-info-metadata-item item-language">
+                                        <span class="language"></span>
+                                    </span>
+                                </div>
+                                <div>
+                                    <div class="title-info-synapsis">
+                                    </div>
+                                </div>
+                                <div class="btn">
+                                    <button type="button" class="btn-Play">Play now</button>
+                                    <div class="list">
+                                        <span>List</span>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="recommendation-section">
+                                <div class="title">
+                                    <div class="arrow">
+                                        <div class="circle" id="movie-left">
+                                            <span class="prev">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </span>
+                                        </div>
+                                        <div class="circle" id="movie-right">
+                                            <span class="next">
+                                                <i class="fa-solid fa-chevron-right"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="container-text">
+                                        <span class="recommend-text">Recommendation</span>
+                                    </div>
+                                </div>
+                                <div class="wrapper" id="imageContainer">
+                                    <div class="carousel"></div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="outer weather">
                         <div class="main_wrap">
                             <div class="top">
                                 <div class="weather_logo">
@@ -409,5 +481,7 @@
         <a id="back-to-topBtn" class="back-to-topBtn btnType-1">↑</a>
         <script src="./js/canvas.js"></script>
         <script src="./js/main.js"></script>
+        <script src="./js/movies.js"></script>
+        <script src="./js/weather.js"></script>
     </body>
 </html>

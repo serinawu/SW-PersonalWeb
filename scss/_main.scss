@@ -376,11 +376,11 @@ html {
             cursor: pointer;
         }
  
+        @import "./movie";
         @import "./weather";
         @import "./header";
         @import "./footer";
         @import "./popup";
         @import "./variable";
-        @import "./rwd";
     }
 }

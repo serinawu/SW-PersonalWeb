@@ -65,6 +65,12 @@
                     display: block;
                 }
 
+                &.movie {
+                    width: 90vw;
+                    height: 90vh;
+                    @include movie;
+                }
+
                 &.weather {
                     width: 90vw;
                     height: 90vh;
