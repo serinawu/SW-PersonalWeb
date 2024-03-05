@@ -152,8 +152,25 @@ html body {
   min-height: 100vh;
   position: relative;
 }
+html body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+html body::-webkit-scrollbar-thumb {
+  background: #fffb1d;
+  border-radius: 10px;
+}
+html body::-webkit-scrollbar-track {
+  background: #dddddd;
+  border-radius: 10px;
+}
 html body main {
   padding: 8vh 0 0;
+}
+@media screen and (max-width: 430px) {
+  html body main {
+    padding: 6vh 0 0;
+  }
 }
 html body main section {
   width: 100%;
@@ -245,9 +262,9 @@ html body main #hero > .container > h3 > span::before {
   }
 }
 html body main #hero > .container > a {
-  width: 8vw;
-  height: 3vw;
+  white-space: nowrap;
   margin: 2vw 0 0;
+  padding: 1vw 2vw;
 }
 html body main #hero > .container > a:hover {
   -webkit-transform: scale(1.1);
@@ -264,6 +281,14 @@ html body main #about > .container {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media screen and (max-width: 430px) {
+  html body main #about > .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 html body main #about > .container .circle-portrait {
   width: 40vw;
   max-width: 345px;
@@ -274,8 +299,21 @@ html body main #about > .container .circle-portrait {
       flex-shrink: 0;
   margin: 0 10vw 0 5vw;
 }
+@media screen and (max-width: 430px) {
+  html body main #about > .container .circle-portrait {
+    width: 50vw;
+    height: 50vw;
+    margin: 0 auto 10vw;
+  }
+}
 html body main #about > .container p {
   line-height: 1.5rem;
+}
+@media screen and (max-width: 430px) {
+  html body main #about > .container p {
+    text-align: center;
+    margin: 0 auto 4vw;
+  }
 }
 html body main #gallery > .container {
   display: -ms-grid;
@@ -283,6 +321,19 @@ html body main #gallery > .container {
   -ms-grid-columns: 1fr 1vw 1fr 1vw 1fr;
   grid-template-columns: repeat(3, 1fr);
   gap: 1vw;
+}
+@media screen and (max-width: 430px) {
+  html body main #gallery > .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 3vw;
+    margin: 0 auto 6vw;
+  }
 }
 html body main #gallery > .container > .section-title {
   grid-column-start: span 3;
@@ -295,12 +346,23 @@ html body main #gallery > .container .project {
   position: relative;
   cursor: pointer;
 }
+@media screen and (max-width: 430px) {
+  html body main #gallery > .container .project {
+    height: 30vw;
+  }
+}
+@media screen and (max-width: 430px) {
+  html body main #gallery > .container .project:nth-of-type(even) > .info {
+    left: unset;
+    right: 0 !important;
+  }
+}
 html body main #gallery > .container .project:hover > .info {
   bottom: 0%;
 }
 html body main #gallery > .container .project > .info {
   width: 100%;
-  height: 30%;
+  height: auto;
   background: rgba(3, 13, 30, 0.2509803922);
   padding: 1vw;
   position: absolute;
@@ -308,14 +370,35 @@ html body main #gallery > .container .project > .info {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+@media screen and (max-width: 430px) {
+  html body main #gallery > .container .project > .info {
+    width: 45%;
+    height: 100%;
+    padding: 2vw;
+    top: 0;
+  }
+}
 html body main #gallery > .container .project > .info > p {
   color: #ffffff;
   font-size: 1rem;
   margin: 0 0 0.5vw;
 }
+@media screen and (max-width: 430px) {
+  html body main #gallery > .container .project > .info > p {
+    margin: 0 0 2vw;
+  }
+}
 html body main #gallery > .container .project > .info > span {
   color: #3b3b3b;
   font-size: 0.875rem;
+}
+@media screen and (max-width: 430px) {
+  html body main #gallery > .container .project > .info > span {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 html body main #resume > .container {
   width: 64%;
@@ -325,8 +408,26 @@ html body main #resume > .container {
   grid-template-columns: repeat(2, 1fr);
   gap: 2vw;
 }
+@media screen and (max-width: 430px) {
+  html body main #resume > .container {
+    width: 81%;
+    display: block;
+  }
+}
 html body main #resume > .container > .section-title {
   grid-column-start: span 2;
+}
+@media screen and (max-width: 430px) {
+  html body main #resume > .container > .section-title {
+    text-align: center;
+    margin: 0 auto 18vw;
+  }
+  html body main #resume > .container > .section-title::before {
+    width: 60%;
+  }
+  html body main #resume > .container > .section-title::after {
+    width: 20%;
+  }
 }
 html body main #resume > .container > div {
   width: 100%;
@@ -338,6 +439,11 @@ html body main #resume > .container > div {
   padding: 0 0 0 25px;
   position: relative;
 }
+@media screen and (max-width: 430px) {
+  html body main #resume > .container > div {
+    margin: 14vw 0 0;
+  }
+}
 html body main #resume > .container > div > h4 {
   color: #aaaaaa;
   font-size: 1.4rem;
@@ -346,6 +452,11 @@ html body main #resume > .container > div > h4 {
   position: absolute;
   top: -3vw;
   left: -0.1vw;
+}
+@media screen and (max-width: 430px) {
+  html body main #resume > .container > div > h4 {
+    top: -9vw;
+  }
 }
 html body main #resume > .container > div > .resume-items {
   margin: 0 0 1vw;
@@ -418,6 +529,12 @@ html body main #resume > .container > div > .resume-items > ul > li a:hover {
   background: #4154f1;
   color: #ffffff;
 }
+@media screen and (max-width: 430px) {
+  html body main #contact {
+    height: 70vh;
+    min-height: unset;
+  }
+}
 html body main #contact > .container {
   width: 60vw;
   display: -ms-grid;
@@ -426,12 +543,23 @@ html body main #contact > .container {
   grid-template-columns: 40% 60%;
   gap: 3vw;
 }
+@media screen and (max-width: 430px) {
+  html body main #contact > .container {
+    width: 80vw;
+    display: block;
+  }
+}
 html body main #contact > .container .section-title {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   grid-column-start: span 2;
   margin: 0 auto;
+}
+@media screen and (max-width: 430px) {
+  html body main #contact > .container .section-title {
+    margin: 0 auto 11vw;
+  }
 }
 html body main #contact > .container .content-items {
   width: 50%;
@@ -477,6 +605,12 @@ html body main #contact > .container form {
   grid-template-columns: repeat(2, 1fr);
   gap: 1vw;
 }
+@media screen and (max-width: 430px) {
+  html body main #contact > .container form {
+    margin: 2vw 0;
+    gap: 1.5vw;
+  }
+}
 html body main #contact > .container form label {
   width: 100%;
   display: -webkit-box;
@@ -494,19 +628,34 @@ html body main #contact > .container form label input {
   height: 3vw;
   padding: 0 1vw;
 }
+@media screen and (max-width: 430px) {
+  html body main #contact > .container form label input {
+    height: 10vw;
+    padding: 0 4vw;
+  }
+}
 html body main #contact > .container form label textarea {
   width: 100%;
   padding: 1vw;
   resize: none;
 }
+@media screen and (max-width: 430px) {
+  html body main #contact > .container form label textarea {
+    height: 20vw;
+  }
+}
 html body main #contact > .container form button {
-  width: 8vw;
-  height: 3vw;
   border-radius: 30vw;
   grid-column-start: span 2;
   -ms-grid-column-align: center;
       justify-self: center;
   font-size: 1rem;
+  padding: 1vw 4vw;
+}
+@media screen and (max-width: 430px) {
+  html body main #contact > .container form button {
+    margin: 4vw auto 0;
+  }
 }
 html body .back-to-topBtn {
   width: 50px;
@@ -516,6 +665,12 @@ html body .back-to-topBtn {
   right: 1vw;
   bottom: 30vh;
   cursor: pointer;
+}
+@media screen and (max-width: 430px) {
+  html body .back-to-topBtn {
+    right: 4vw;
+    bottom: 17vh;
+  }
 }
 html body header {
   width: 100vw;
@@ -532,10 +687,16 @@ html body header {
   background: #ffffff;
   -webkit-box-shadow: 0 -2px 10px rgba(3, 13, 30, 0.2509803922);
           box-shadow: 0 -2px 10px rgba(3, 13, 30, 0.2509803922);
-  padding: 0 1vw;
+  padding: 0 2vw 0 1vw;
   position: fixed;
   top: 0;
   z-index: 500;
+}
+@media screen and (max-width: 430px) {
+  html body header {
+    height: 6vh;
+    padding: 0 4vw;
+  }
 }
 html body header .logo {
   display: -webkit-box;
@@ -549,10 +710,23 @@ html body header .logo {
           justify-content: center;
   color: rgba(1, 22, 61, 0.9019607843);
   font-size: 2.5rem;
-  font-family: "Poiret One", cursive;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: bold;
+}
+@media screen and (max-width: 700px) {
+  html body header .logo {
+    font-size: 2rem;
+  }
 }
 html body header > nav {
   height: 100%;
+}
+@media screen and (max-width: 670px) {
+  html body header > nav {
+    display: none;
+  }
 }
 html body header > nav > ul {
   height: 100%;
@@ -652,6 +826,11 @@ html body footer {
   display: flex;
   background: #dddddd;
 }
+@media screen and (max-width: 430px) {
+  html body footer {
+    height: 15vh;
+  }
+}
 html body footer > .container {
   width: 40%;
   display: -webkit-box;
@@ -672,7 +851,9 @@ html body footer > .container {
 html body footer > .container > span {
   color: rgba(1, 22, 61, 0.9019607843);
   font-size: 1.5rem;
-  font-family: "Poiret One", cursive;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 html body footer > .container > .social-links {
   display: -webkit-box;
@@ -688,6 +869,11 @@ html body footer > .container > .social-links {
 }
 html body footer > .container > .social-links > a {
   margin: 0 0.5vw 0 0;
+}
+@media screen and (max-width: 430px) {
+  html body footer > .container > .social-links > a {
+    margin: 0 1vw 0 0;
+  }
 }
 html body footer > .container > .social-links > a:last-of-type {
   margin: 0;
@@ -707,6 +893,12 @@ html body footer > .container > .social-links > a i {
 html body footer > .container .copyright {
   color: #aaaaaa;
   font-size: 0.875rem;
+}
+@media screen and (max-width: 430px) {
+  html body footer > .container .copyright {
+    text-align: center;
+    white-space: nowrap;
+  }
 }
 html body .popup {
   display: none;

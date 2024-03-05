@@ -7,8 +7,26 @@ html {
         min-height: 100vh;
         position: relative;
 
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $subColor-2;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: $subColor-1;
+            border-radius: 10px;
+        }
+
         main {
             padding: 8vh 0 0;
+            @include media(430) {
+                padding: 6vh 0 0;
+            }
 
             section {
                 width: 100%;
@@ -81,9 +99,9 @@ html {
                     }
 
                     &>a {
-                        width: 8vw;
-                        height: 3vw;
+                        white-space: nowrap;
                         margin: 2vw 0 0;
+                        padding: 1vw 2vw;
 
                         &:hover {
                             transform: scale(1.1);
@@ -98,6 +116,9 @@ html {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    @include media(430) {
+                        flex-direction: column;
+                    }
 
                     .circle-portrait {
                         width: 40vw;
@@ -107,10 +128,19 @@ html {
                         border-radius: 50vw;
                         flex-shrink: 0;
                         margin: 0 10vw 0 5vw;
+                        @include media(430) {
+                            width: 50vw;
+                            height: 50vw;
+                            margin: 0 auto 10vw;
+                        }
                     }
 
                     p {
                         line-height: 1.5rem;
+                        @include media(430) {
+                            text-align: center;
+                            margin: 0 auto 4vw;
+                        }
                     }
                 }
             }
@@ -121,6 +151,12 @@ html {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                     gap: 1vw;
+                    @include media(430) {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3vw;
+                        margin: 0 auto 6vw;
+                    }
 
                     &>.section-title {
                         grid-column-start: span 3;
@@ -133,6 +169,19 @@ html {
                         overflow: hidden;
                         position: relative;
                         cursor: pointer;
+                        @include media(430) {
+                            height: 30vw;
+                        }
+
+                        &:nth-of-type(even) {
+
+                            &>.info {
+                                @include media(430) {
+                                    left: unset;
+                                    right: 0 !important;
+                                }
+                            }
+                        }
 
                         &:hover {
 
@@ -143,22 +192,37 @@ html {
 
                         &>.info {
                             width: 100%;
-                            height: 30%;
+                            height: auto;
                             background: $shadow-1;
                             padding: 1vw;
                             position: absolute;
                             bottom: -30%;
                             transition: all 0.3s;
+                            @include media(430) {
+                                width: 45%;
+                                height: 100%;
+                                padding: 2vw;
+                                top: 0;
+                            }
 
                             &>p {
                                 color: $font-2;
                                 font-size: 1rem;
                                 margin: 0 0 0.5vw;
+                                @include media(430) {
+                                    margin: 0 0 2vw;
+                                }
                             }
 
                             &>span {
                                 color: $font-4;
                                 font-size: 0.875rem;
+                                @include media(430) {
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 4;
+                                    -webkit-box-orient: vertical;  
+                                    overflow: hidden;
+                                }
                             }
                         }
                     }
@@ -172,9 +236,25 @@ html {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     gap: 2vw;
+                    @include media(430) {
+                        width: 81%;
+                        display: block;
+                    }
 
                     &>.section-title {
                         grid-column-start: span 2;
+                        @include media(430) {
+                            text-align: center;
+                            margin: 0 auto 18vw;
+
+                            &::before {
+                                width: 60%;
+                            }
+
+                            &::after {
+                                width: 20%;
+                            }
+                        }
                     }
 
                     &>div {
@@ -184,6 +264,9 @@ html {
                         margin: 3vw 0 0;
                         padding: 0 0 0 25px;
                         position: relative;
+                        @include media(430) {
+                            margin: 14vw 0 0;
+                        }
 
                         &>h4 {
                             color: $font-3;
@@ -193,6 +276,9 @@ html {
                             position: absolute;
                             top: -3vw;
                             left: -0.1vw;
+                            @include media(430) {
+                                top: -9vw;
+                            }
                         }
 
                         &>.resume-items {
@@ -276,17 +362,28 @@ html {
             }
 
             #contact {
+                @include media(430) {
+                    height: 70vh;
+                    min-height: unset;
+                }
 
                 &>.container {
                     width: 60vw;
                     display: grid;
                     grid-template-columns: 40% 60%;
                     gap: 3vw;
+                    @include media(430) {
+                        width: 80vw;
+                        display: block;
+                    }
 
                     .section-title {
                         width: fit-content;
                         grid-column-start: span 2;
                         margin: 0 auto;
+                        @include media(430) {
+                            margin: 0 auto 11vw;
+                        }
                     }
 
                     .content-items {
@@ -327,6 +424,10 @@ html {
                         display: grid;
                         grid-template-columns: repeat(2, 1fr);
                         gap: 1vw;
+                        @include media(430) {
+                            margin: 2vw 0;
+                            gap: 1.5vw;
+                        }
 
                         label {
                             width: 100%;
@@ -344,22 +445,31 @@ html {
                                 width: 100%;
                                 height: 3vw;
                                 padding: 0 1vw;
+                                @include media(430) {
+                                    height: 10vw;
+                                    padding: 0 4vw;
+                                }
                             }
 
                             textarea {
                                 width: 100%;
                                 padding: 1vw;
                                 resize: none;
+                                @include media(430) {
+                                    height: 20vw;
+                                }
                             }
                         }
 
                         button {
-                            width: 8vw;
-                            height: 3vw;
                             border-radius: 30vw;
                             grid-column-start: span 2;
                             justify-self: center;
                             font-size: 1rem;
+                            padding: 1vw 4vw;
+                            @include media(430) {
+                                margin: 4vw auto 0;
+                            }
                         }
                     }
                 }
@@ -374,6 +484,10 @@ html {
             right: 1vw;
             bottom: 30vh;
             cursor: pointer;
+            @include media(430) {
+                right: 4vw;
+                bottom: 17vh;
+            }
         }
  
         @import "./movie";
