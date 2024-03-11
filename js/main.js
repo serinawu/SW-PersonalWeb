@@ -1,6 +1,8 @@
 //header
 const navbar = document.getElementById('navbar');
 const sections = document.querySelectorAll('section');
+const menu = document.querySelector('.menu_icon');
+const closeMenu = document.querySelector('.menuClose_icon');
 
 navbar.addEventListener('click', function(event){
     event.preventDefault();
@@ -16,8 +18,18 @@ navbar.addEventListener('click', function(event){
         if(targetSection) {
             targetSection.scrollIntoView({behavior: 'smooth'});
         }
+    } if(event.target.tagName === 'A' && navbar.classList.contains('sideMode')) {
+        navbar.classList.remove('sideMode');
     }
 });
+
+menu.addEventListener('click', function(event) {
+    navbar.classList.add('sideMode');
+})
+
+closeMenu.addEventListener('click', function(event) {
+    navbar.classList.remove('sideMode');
+})
 
 //監聽當前章節
 window.addEventListener('scroll', function() {

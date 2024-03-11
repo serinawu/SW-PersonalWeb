@@ -1,6 +1,6 @@
 @mixin movie {
     color: #ffffff;
-    background-color: #000000;
+    background: #000000;
 
     .bg-img {
         width: 100%;
@@ -29,6 +29,9 @@
             background: linear-gradient(to bottom, #000000 23%, transparent 77%);
             font-size: 1.125rem;
             padding: 2vw;
+            @include media(430) {
+                padding: 5vw;
+            }
     
             .movie_logo {
                 display: block;
@@ -53,6 +56,9 @@
     
                 a {
                     color: #ffffff;
+                    @include media(430) {
+                        font-size: 3.6vw;
+                    }
                 }
             }
         }
@@ -66,7 +72,7 @@
     
             .info-container {
                 width: 55%;
-                padding: 50px 32px 64px 0;
+                padding: 4vw 4vw 4vw 0;
                 line-height: 28px;
                 @include media(958) {
                     width: 100%;
@@ -91,12 +97,14 @@
                 .logo-container {
     
                     &>h1 {
-                        font-size: 55px;
+                        font-size: 4rem;
                         line-height: 1.5;
-                        margin: 0 0 55px;
-                        margin-bottom: 60px;
+                        margin: 0 0 4vw;
                         @include media(958) {
-                            margin-bottom: 0px;
+                            margin-bottom: 0vw;
+                        }
+                        @include media(430) {
+                            font-size: 3rem;
                         }
                     }
                 }
@@ -130,6 +138,15 @@
                     color: #a3a3a3;
                 }
             }
+
+            .title-info-synapsis {
+                @include media(430) {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;  
+                    overflow: hidden;
+                }
+            }
     
             .btn {
                 display: flex;
@@ -142,6 +159,9 @@
                     border: none;
                     padding: 15px 35px;
                     cursor: pointer;
+                    @include media(430) {
+                        padding: 2vw 4vw;
+                    }
             
                     &:hover {
                         background-color: #b71313;
@@ -155,6 +175,9 @@
                         padding: 16px 50px;
                         border: 1px solid #ffffff;
                         cursor: pointer;
+                        @include media(430) {
+                            padding: 2vw 8vw;
+                        }
             
                         &:hover {
                             background-color: #ffffff2d;
@@ -172,48 +195,74 @@
             margin: 0 auto;
             position: relative;
             z-index: 2;
+            @include media(430){
+                padding: 4vw 4vw 4vw 0;
+            }
     
             &>.title {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-            }
+
+
+                .container-text {
+                    animation: text-up 2s ease-in-out;
         
-            &>.text {
-                order: 1;
-            }
-    
-            .arrow {
-                order: 2;
-            }
-    
-            .circle {
-                width: 45px;
-                height: 45px;
-                display: inline-block;
-                border-radius: 50%;
-                border: 1px solid #ffffff;
-                margin: 0 25px 0 0;
-                position: relative;
-                cursor: pointer;
-    
-                &:hover {
-                    background-color: #ffffff;
-                    border: 1px solid #bebebe;
-    
-                    &>.prev,
-                    &>.next {
-                        color: #000000;
+                    .recommend-text {
+                        color: #ffffff;
+                        font-size: 2rem;
+                        font-weight: 400;
+                        @include media(430) {
+                            font-size: 1rem;
+                        }
                     }
                 }
+
+                .arrow {
+                    @include media(430) {
+                        display: inline-flex;
+                    }
     
-                &>.prev,
-                &>.next {
-                    font-size: 16px;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                    .circle {
+                        width: 45px;
+                        height: 45px;
+                        display: inline-block;
+                        border-radius: 50%;
+                        border: 1px solid #ffffff;
+                        margin: 0 25px 0 0;
+                        position: relative;
+                        cursor: pointer;
+                        @include media(430){
+                            width: 7vw;
+                            height: 7vw;
+                            font-size: 3vw;
+                        }
+
+                        &:last-of-type {
+                            @include media(430){
+                               margin: 0;
+                            }
+                        }
+            
+                        &:hover {
+                            background-color: #ffffff;
+                            border: 1px solid #bebebe;
+            
+                            &>.prev,
+                            &>.next {
+                                color: #000000;
+                            }
+                        }
+            
+                        &>.prev,
+                        &>.next {
+                            font-size: 16px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
                 }
             }
           
@@ -250,17 +299,7 @@
                     }
                 }
             }
-    
-            .container-text {
-                animation: text-up 2s ease-in-out;
-    
-                .recommend-text {
-                    color: #ffffff;
-                    font-size: 25px;
-                    font-weight: 400;
-                }
-            }
-    
+
             @keyframes text-up {
                 from {
                     transform: translateY(15px);

@@ -53,10 +53,47 @@
             }
         }
 
+        //專案控制按鈕
+        .project-prevBtn,
+        .project-nextBtn {
+            width: 3vw;
+            height: 3vw;
+            display: flex;
+            background: $subColor-0;
+            border-radius: 50%;
+            position: fixed;
+            top: 50%;
+            left: 2vw;
+            transform: translateY(-50%);
+            transition: all 0.3s;
+            opacity: 0.4;
+            cursor: pointer;
+            @include media(430){
+                width: 7vw;
+                height: 7vw;
+                opacity: 0.2;
+            }
+
+            &:hover,&:active {
+                opacity: 0.7;
+            }
+
+            &>i {
+                margin: auto;
+            }
+        }
+
+        .project-nextBtn {
+            left: unset;
+            right: 1vw;
+        }
+
+        //專案外層
         &>.project_container {
             width: fit-content;
             height: fit-content;
             position: relative;
+            overflow-y: auto;
 
             &>.outer {
                 display: none;
@@ -67,14 +104,29 @@
 
                 &.movie {
                     width: 90vw;
-                    height: 90vh;
+                    max-height: 90vh;
                     @include movie;
+                    @include media(430) {
+                        width: 80vw;
+                        max-height: 80vh;
+                    }
                 }
 
                 &.weather {
                     width: 90vw;
-                    height: 90vh;
+                    max-height: 90vh;
                     @include weather;
+                    @include media(1024) {
+                        width: 84vw;
+                        height: 57vh;
+                    }
+                    @include media(430) {
+                        width: 78vw;
+                        height: auto;
+                    }
+                    @include media(375) {
+                        height: 83vh;
+                    }
                 }
             }
         }

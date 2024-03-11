@@ -11,7 +11,7 @@
         <link href="" rel="icon">
         <link href="" rel="apple-touch-icon">
         <!-- CSS -->
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./src/css/style.css">
         <!-- font awesome -->
         <script src="https://kit.fontawesome.com/2bd8048d04.js" crossorigin="anonymous"></script>
         <!-- Google fronts -->
@@ -25,6 +25,12 @@
             <a href="index.html" class="logo">Serina Wu</a>
             <nav id="navbar" class="navbar">
                 <ul>
+                    <span class="menu_icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </span>
+                    <span class="menuClose_icon">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
                     <li>
                         <a href="#about">關於我</a>
                     </li>
@@ -57,7 +63,7 @@
                     <li>
                         <a href="#contact">聯絡資訊</a>
                     </li>
-                    <li>
+                    <li class="cv">
                         <a class="cv btnType-1" target="_blank" href="https://drive.google.com/file/d/1ofAN4nf92WNJLzoyEiAHBkKgGyZhozRR/view?usp=sharing">履歷</a>
                     </li>
                 </ul>
@@ -105,12 +111,6 @@
                         <div class="info">
                             <p>天氣預報</p>
                             <span>使用JavaScript以及搭配串接定位、天氣API</span>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <div class="info">
-                            <p>音樂播放器</p>
-                            <span></span>
                         </div>
                     </div>
                     <div class="project">
@@ -265,12 +265,18 @@
             </div>
         </footer>
         <div class="popup">
-            <div class="popup_model">
+            <div class="popup_model display">
                 <i class="fa-regular fa-circle-xmark close_popupBtn"></i>
                 <div class="projectName">
                     <p>電影平台</p>
                 </div>
-                <div class="project_container">
+                <div class="project_container display">
+                    <span class="project-prevBtn">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </span>
+                    <span class="project-nextBtn">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </span>
                     <div class="outer movie">
                         <div class="bg-img">
                             <div class="nav">
@@ -321,6 +327,9 @@
                             </section>
                             <section class="recommendation-section">
                                 <div class="title">
+                                    <div class="container-text">
+                                        <span class="recommend-text">Recommendation</span>
+                                    </div>
                                     <div class="arrow">
                                         <div class="circle" id="movie-left">
                                             <span class="prev">
@@ -333,9 +342,6 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="container-text">
-                                        <span class="recommend-text">Recommendation</span>
-                                    </div>
                                 </div>
                                 <div class="wrapper" id="imageContainer">
                                     <div class="carousel"></div>
@@ -343,7 +349,7 @@
                             </section>
                         </div>
                     </div>
-                    <div class="outer weather">
+                    <div class="outer weather display">
                         <div class="main_wrap">
                             <div class="top">
                                 <div class="weather_logo">
@@ -369,14 +375,14 @@
                                             <span class="temperature">5</span>
                                             <div class="weather_pic"></div>
                                             <span class="weather-state">Broken Clouds</span>
-                                        </div>
-                                        <div class="row">
-                                            <i class="fa-regular fa-calendar"></i>
-                                            <span class="today">Thursday 22, Feb</span>
-                                        </div>
-                                        <div class="row">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            <span class="located">Taiwan, Taichung</span>
+                                            <div class="row">
+                                                <i class="fa-regular fa-calendar"></i>
+                                                <span class="today">Thursday 22, Feb</span>
+                                            </div>
+                                            <div class="row">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span class="located">Taiwan, Taichung</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="fiveDays">
@@ -429,7 +435,10 @@
                                     <div class="block">
                                         <div class="wind_block">
                                             <i class="fa-solid fa-wind"></i>
-                                            <p id="wind_speed">3.90 7.75 33.6 38.6</p>
+                                            <p id="wind_speed">3.90</p>
+                                            <p id="wind_speed">7.75</p>
+                                            <p id="wind_speed">33.6</p>
+                                            <p id="wind_speed">38.6</p>
                                         </div>
                                         <div class="sunRise_block">
                                             <i class="fa-regular fa-sun"></i>
@@ -458,6 +467,31 @@
                                     </div>
                                     <div class="block">
                                         <p>Today at</p>
+                                        <div class="group">
+                                            <p>9pm</p>
+                                            <div class="weather_img"></div>
+                                            <p>5</p>
+                                        </div>
+                                        <div class="group">
+                                            <p>9pm</p>
+                                            <div class="weather_img"></div>
+                                            <p>5</p>
+                                        </div>
+                                        <div class="group">
+                                            <p>9pm</p>
+                                            <div class="weather_img"></div>
+                                            <p>5</p>
+                                        </div>
+                                        <div class="group">
+                                            <p>9pm</p>
+                                            <div class="weather_img"></div>
+                                            <p>5</p>
+                                        </div>
+                                        <div class="group">
+                                            <p>9pm</p>
+                                            <div class="weather_img"></div>
+                                            <p>5</p>
+                                        </div>
                                         <div class="group">
                                             <p>9pm</p>
                                             <div class="weather_img"></div>

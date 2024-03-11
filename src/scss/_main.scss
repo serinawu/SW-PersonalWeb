@@ -60,18 +60,21 @@ html {
                     transform: translate(-50%, -50%);
 
                     &>h1 {
+                        color: $font-5;
                         font-size: 3rem;
-                        opacity: 0.9;
-                        filter: hue-rotate(90deg); 
+                        text-shadow: 0 0 13px $subColor-0;
+                        opacity: 0.7;
                     }
 
                     &>h3 {
+                        color: $font-6;
                         margin: 1vw 0 0;
 
                         &>span {
                             color: $primary;
                             font-size: 1.4rem;
                             font-weight: bold;
+                            text-shadow: 0 0 5px $subColor-0;
                             margin: 0 1vw 0 1vw;
                             position: relative;
 
@@ -102,6 +105,7 @@ html {
                         white-space: nowrap;
                         margin: 2vw 0 0;
                         padding: 1vw 2vw;
+                        box-shadow: 0 0 10px $shadow-1;
 
                         &:hover {
                             transform: scale(1.1);
@@ -116,7 +120,7 @@ html {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    @include media(430) {
+                    @include media(1024) {
                         flex-direction: column;
                     }
 
@@ -186,13 +190,14 @@ html {
                         &:hover {
 
                             &>.info {
+                                height: 11vw;
                                 bottom: 0%;
                             }
                         }
 
                         &>.info {
                             width: 100%;
-                            height: auto;
+                            height: 0vw;
                             background: $shadow-1;
                             padding: 1vw;
                             position: absolute;
@@ -222,6 +227,9 @@ html {
                                     -webkit-line-clamp: 4;
                                     -webkit-box-orient: vertical;  
                                     overflow: hidden;
+                                }
+                                @include media(390) {
+                                    -webkit-line-clamp: 3;
                                 }
                             }
                         }
@@ -365,6 +373,9 @@ html {
                 @include media(430) {
                     height: 70vh;
                     min-height: unset;
+                }
+                @include media(375) {
+                    height: 85vh;
                 }
 
                 &>.container {

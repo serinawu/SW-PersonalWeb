@@ -1,0 +1,394 @@
+@mixin weather {
+    background: #121215;
+
+    &>.main_wrap {
+        width: 95%;
+        background: #3d3d3d;
+        margin: 0 auto;
+        padding: 2vw;
+        @include media(1024){
+            width: 90%;
+        }
+        @include media(430){
+            width: 100%;
+            padding: 2vw 5vw 5vw;
+        }
+
+        &>.top {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include media(430){
+                flex-direction: column;
+                background: #3d3d3d;
+                padding: 0 0 2vw;
+                position: sticky;
+                top: 0;
+            }
+    
+            .weather_logo {
+                max-width: 606px;
+                display: flex;
+                align-items: center;
+                color: #b8b8b8;
+                font-size: 1.8rem;
+                font-weight: bold;
+                margin: 0 3vw 0 0;
+    
+                &>p {
+                    margin: 0 0 0 1vw;
+                    @include media(950) {
+                        font-size: 2.8vw;
+                    }
+                    @include media(950) {
+                        font-size: 5.8vw;
+                    }
+                }
+            }
+
+            &>div {
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                &:nth-of-type(1) {
+                    width: 44%;
+                    @include media(430){
+                        width: auto;
+                        margin: 2vw 0;
+                    }
+                }
+
+                &>label {
+                    width: 100%;
+                    height: 5vh;
+                    display: inline-block;
+                    margin: 0 2vw 0 0;
+                    position: relative;
+                    @include media(1024){
+                        width: 69%;
+                        height: 3vh;
+                    }
+                    @include media(430){
+                        height: 4vh;
+                    }
+                    @include media(375){
+                        height: 6vh;
+                    }
+
+                    &>i {
+                        color: #b8b8b8;
+                        position: absolute;
+                        top: 50%;
+                        left: 1vw;
+                        transform: translateY(-50%);
+                        @include media(430){
+                            left: 2vw;
+                        }
+                    }
+
+                    &>input {
+                        width: 100%;
+                        height: 100%;
+                        background: #000000;
+                        color: #ffffff;
+                        border: none;
+                        padding: 0 2.8vw;
+                        @include media(430){
+                            padding: 0 7vw;
+                        }
+                    }
+                }
+
+                &>button {
+                    width: 19%;
+                    height: 4.5vh;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background: #a491c3;
+                    white-space: nowrap;
+                    border-radius: 30vw;
+                    padding: 0 1vw;
+                    @include media(1024){
+                        width: 32%;
+                        height: 3vh;
+                    }
+                    @include media(430){
+                        width: 32%;
+                        height: 4vh;
+                        white-space: wrap;
+                    }
+                    @include media(375){
+                        height: 6vh;
+                        font-size: 3vw;
+                    }
+                    
+                    &>i {
+                        font-size: 1.185rem;
+                        margin: 0 0.5% 0 0;
+                    }
+                }
+            }
+        }
+
+        &>.bottom {
+            width: 100%;
+            display: flex;
+            margin: 2vw 0 0;
+            @include media(1024){
+                flex-direction: column;
+            }
+
+            &>.sideLeft {
+                width: 30%;
+                flex-shrink: 0;
+                margin: 0 2vw 0 0;
+                @include media(1024) {
+                    width: fit-content;
+                    display: flex;
+                    margin: 0 0 2vw 0;
+                }
+                @include media(430) {
+                    flex-direction: column;
+                }
+
+                &>div {
+                    background: #2a2a2a;
+                    border-radius: 1vw;
+                    padding: 1vw;
+                    margin: 0 0 1.5vw;
+                    @include media(1024){
+                        width: 52%;
+                        flex-shrink: 0;
+                        margin: 0 2vw 0 0;
+                    }
+                    @include media(430){
+                        padding: 4vw;
+                    }
+
+                    &.nowBlock {
+                        @include media(430){
+                            width: 100%;
+                            margin: 0 0 4vw;
+                        }
+
+                        &>.column {
+                            width: 100%;
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            gap: 1vw;
+    
+                            &>p {
+                                grid-column-start: span 2;
+                                margin: 0 0 1vw;
+                            }
+    
+                            .weather-state {
+                                grid-column-start: span 2;
+                                padding: 0 0 1vw;
+                                border-bottom: 1px solid #5f5f5f;
+                                margin: 0 0 1vw;
+                            }
+
+                            &>.row {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                @include media(430){
+                                    display: flex;
+                                    justify-content: center;
+                                }
+        
+                                i {
+                                    margin: 0 1vw 0 0;
+                                    @include media(430){
+                                        margin: 0 2vw 0 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.fiveDays {
+                        background: transparent;
+                        padding: 0;
+                        margin: 0;
+                        @include media(1024) {
+                            width: 100%;
+                        }
+
+                        .fiveDays_list {
+                            background: #2a2a2a;
+                            border-radius: 1vw;
+                            padding: 1vw;
+                            margin: 1.5vw 0 0;
+                            @include media(1024){
+                                width: 98%;
+                            }
+                            @include media(430){
+                                width: 100%;
+                                padding: 2vw 0;
+                            }
+    
+                            &>li {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+                                padding: 0.5vw 0;
+                                margin: 0 0 1vw;
+    
+                                &:last-of-type {
+                                    margin: 0;
+                                }
+    
+                                &>i {
+                                    margin: 0 0 1vw;
+                                }
+                            }
+                        }
+                    }
+
+                    i {
+                        color: #ffffff;
+                    }
+
+                    p {
+                        color: #ffffff;
+                    }
+
+                    span {
+                        color: #ababab;
+
+                        &.temperature {
+                            color: #ffffff;
+                            font-size: 4rem;
+                            @include media(430) {
+                                justify-self: center;
+                            }
+                        }
+
+                        &.today,
+                        &.located {
+                            @include media(430){
+                                font-size: 3vw;
+                            }
+                        }
+                    }
+                }
+            }
+           
+            &>.sideRight {
+                width: 100%;
+                background: #2a2a2a;
+                border-radius: 1vw 2vw;
+                padding: 1vw;
+                @include media(430){
+                    padding: 3vw;
+                }
+
+                &>.block {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 1vw;
+                    padding: 1vw;
+                    margin: 0 0 1.5vw;
+                    @include media(430){
+                        gap: 2vw;
+                        padding: 2vw;
+                    }
+
+                    &:last-of-type {
+                        grid-template-columns: repeat(8, 1fr);
+                        margin: 0;
+                        @include media(430){
+                            grid-template-columns: repeat(4, 1fr);
+                        }
+
+                        &>p {
+                            font-size: 1rem;
+                            grid-column-start: span 8;
+                            margin: 0 0 1vw;
+                            @include media(430){
+                                grid-column-start: span 4;
+                            }
+                        }
+
+                        &>.group {
+                            width: 100%;
+                            height: 15vh;
+                            display: block;
+                            background: #3e3e3e;
+                            border-radius: 1vw;
+                            padding: 1vw;
+                            text-align: center;
+                            @include media(1024){
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                            }
+                            @include media(430){
+                                height: 8vh;
+                            }
+
+                            &>.weather_img {
+                                width: 5vh;
+                                height: 5vh;
+                                margin: 1vh 0;
+                            }
+                        }
+                    }
+
+                    &>div {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+
+                        &.wind_block {
+                            grid-column-start: span 2;
+                            @include media(430){
+                                display: grid;
+                                grid-template-columns: 20% 40% 40%;
+                            }
+
+                            &>i {
+                                @include media(430){
+                                    grid-row-start: span 2;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                i {
+                    color: #ffffff;
+                    font-size: 1.58rem;
+                    margin: 0 1vw 0 0;
+                    @include media(430){
+                        font-size: 4vw;
+                        margin: 0 2vw 0 0;
+                    }
+                }
+
+                p {
+                    color: #ffffff;
+                    font-size: 1.188rem;
+                    @include media(430){
+                        font-size: 3.8vw;
+                    }
+                }
+
+                span {
+                    color: #ababab;
+
+                    &.temperature {
+                        color: #ffffff;
+                        font-size: 4rem;
+                    }
+                }
+            }
+        }
+    }
+}
