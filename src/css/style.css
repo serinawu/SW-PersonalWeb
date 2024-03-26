@@ -44,6 +44,14 @@
   color: #fffb1d;
 }
 
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -993,7 +1001,7 @@ html body .popup > .popup_model .project-nextBtn > i {
 }
 html body .popup > .popup_model .project-nextBtn {
   left: unset;
-  right: 1vw;
+  right: 2vw;
 }
 html body .popup > .popup_model > .project_container {
   width: fit-content;
@@ -1008,7 +1016,7 @@ html body .popup > .popup_model > .project_container > .outer.display {
   display: block;
 }
 html body .popup > .popup_model > .project_container > .outer.movie {
-  width: 90vw;
+  width: 87vw;
   max-height: 90vh;
   color: #ffffff;
   background: #000000;
@@ -1298,8 +1306,7 @@ html body .popup > .popup_model > .project_container > .outer.movie .bg-img .rec
   }
 }
 html body .popup > .popup_model > .project_container > .outer.weather {
-  width: 90vw;
-  max-height: 90vh;
+  width: 87vw;
   background: #121215;
 }
 html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap {
@@ -1307,6 +1314,7 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
   background: #3d3d3d;
   margin: 0 auto;
   padding: 2vw;
+  position: relative;
 }
 @media screen and (max-width: 1024px) {
   html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap {
@@ -1360,6 +1368,12 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
   width: 100%;
   display: flex;
   align-items: center;
+  position: relative;
+}
+@media screen and (max-width: 1024px) {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div {
+    position: unset;
+  }
 }
 html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(1) {
   width: 44%;
@@ -1369,6 +1383,64 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
     width: auto;
     margin: 2vw 0;
   }
+}
+@media screen and (max-width: 430px) {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 85% 10%;
+    gap: 2vw;
+  }
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result {
+  width: 77%;
+  display: block;
+  background: #3c3d3c;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 999;
+}
+@media screen and (max-width: 1024px) {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result {
+    width: 64%;
+  }
+}
+@media screen and (max-width: 430px) {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result {
+    width: 100%;
+    height: 58vh;
+    top: 78px;
+  }
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li:hover, html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li:active, html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li.active {
+  background: #454545;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li:hover a, html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li:active a, html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li.active a {
+  background: #454545;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li i {
+  color: #ffffff;
+  margin: 0 10px 0 0;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li a {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li a p {
+  color: #ffffff;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div:nth-of-type(2).active > .search-result ul li a p:nth-of-type(2) {
+  color: #ababab;
+  font-size: 0.8rem;
 }
 html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > label {
   width: 100%;
@@ -1385,6 +1457,7 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
 }
 @media screen and (max-width: 430px) {
   html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > label {
+    width: 100%;
     height: 4vh;
   }
 }
@@ -1418,7 +1491,7 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
     padding: 0 7vw;
   }
 }
-html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > button {
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > .current_locate {
   width: 19%;
   height: 4.5vh;
   flex-shrink: 0;
@@ -1426,32 +1499,51 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
   align-items: center;
   justify-content: space-between;
   background: #a491c3;
+  color: #121215;
   white-space: nowrap;
   border-radius: 30vw;
   padding: 0 1vw;
 }
 @media screen and (max-width: 1024px) {
-  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > button {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > .current_locate {
     width: 32%;
     height: 3vh;
   }
 }
 @media screen and (max-width: 430px) {
-  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > button {
-    width: 32%;
-    height: 4vh;
-    white-space: wrap;
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > .current_locate {
+    width: 8vw;
+    height: 8vw;
   }
 }
 @media screen and (max-width: 375px) {
-  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > button {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > .current_locate {
     height: 6vh;
     font-size: 3vw;
   }
 }
-html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > button > i {
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > .current_locate > i {
   font-size: 1.185rem;
   margin: 0 0.5% 0 0;
+}
+@media screen and (max-width: 430px) {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > .current_locate > i {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 430px) {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > .current_locate > p {
+    display: none;
+  }
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > .search-result {
+  display: none;
+  width: 100%;
+}
+@media screen and (max-width: 430px) {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .top > div > .search-result {
+    grid-column-start: span 2;
+  }
 }
 html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom {
   width: 100%;
@@ -1513,6 +1605,12 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
 html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideLeft > div.nowBlock > .column > p {
   grid-column-start: span 2;
   margin: 0 0 1vw;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideLeft > div.nowBlock > .column .weather_pic {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  grid-column-start: 2;
 }
 html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideLeft > div.nowBlock > .column .weather-state {
   grid-column-start: span 2;
@@ -1626,6 +1724,12 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
     padding: 2vw;
   }
 }
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block > .todaysHighlight {
+  grid-column-start: span 4;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block .air_Block {
+  grid-column-start: span 4;
+}
 html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block:last-of-type {
   grid-template-columns: repeat(8, 1fr);
   margin: 0;
@@ -1671,24 +1775,50 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
   height: 5vh;
   margin: 1vh 0;
 }
-html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block > div {
-  width: 100%;
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div {
   display: flex;
   align-items: center;
 }
-html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block > div.wind_block {
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div.wind_group {
   grid-column-start: span 2;
+  justify-content: space-between;
 }
 @media screen and (max-width: 430px) {
-  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block > div.wind_block {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div.wind_group {
     display: grid;
     grid-template-columns: 20% 40% 40%;
   }
 }
 @media screen and (max-width: 430px) {
-  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block > div.wind_block > i {
+  html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div.wind_group > i {
     grid-row-start: span 2;
   }
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div.sunset_group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-start: span 2;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div.sunset_group > .title-2 {
+  grid-column-start: span 2;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div .data_block {
+  display: grid;
+  grid-template-columns: 20% 74%;
+  gap: 10px;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div .data_block > i {
+  grid-row-start: span 2;
+  align-self: center;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div .data_block > .title-2 {
+  grid-column-start: 2;
+  align-self: flex-start;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight > .block div .data_block > p {
+  grid-column-start: 2;
+  align-self: flex-start;
+  text-align: center;
 }
 html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight i {
   color: #ffffff;
@@ -1710,6 +1840,10 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
     font-size: 3.8vw;
   }
 }
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight p.title-2 {
+  color: #b8b8b8;
+  font-size: 1rem;
+}
 html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight span {
   color: #ababab;
 }
@@ -1717,10 +1851,55 @@ html body .popup > .popup_model > .project_container > .outer.weather > .main_wr
   color: #ffffff;
   font-size: 4rem;
 }
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .bottom > .sideRight span.title-2 {
+  display: block;
+  font-size: 0.8rem;
+  text-align: center;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap .loading {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap .loading::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  border: 2px solid #ffffff;
+  border-block-start-color: transparent;
+  border-radius: 30px;
+  animation: loading 500ms linear infinite;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .error-content {
+  width: 100%;
+  height: 100%;
+  background: #2a2a2a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .error-content h2 {
+  font-size: 2rem;
+}
+html body .popup > .popup_model > .project_container > .outer.weather > .main_wrap > .error-content span {
+  padding: 10px 15px;
+  margin: 20px auto 0;
+  cursor: pointer;
+}
 @media screen and (max-width: 1024px) {
   html body .popup > .popup_model > .project_container > .outer.weather {
     width: 84vw;
-    height: 57vh;
   }
 }
 @media screen and (max-width: 430px) {

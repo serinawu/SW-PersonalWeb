@@ -85,7 +85,7 @@
 
         .project-nextBtn {
             left: unset;
-            right: 1vw;
+            right: 2vw;
         }
 
         //專案外層
@@ -103,7 +103,7 @@
                 }
 
                 &.movie {
-                    width: 90vw;
+                    width: 87vw;
                     max-height: 90vh;
                     @include movie;
                     @include media(430) {
@@ -113,12 +113,10 @@
                 }
 
                 &.weather {
-                    width: 90vw;
-                    max-height: 90vh;
+                    width: 87vw;
                     @include weather;
                     @include media(1024) {
                         width: 84vw;
-                        height: 57vh;
                     }
                     @include media(430) {
                         width: 78vw;

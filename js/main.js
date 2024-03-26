@@ -50,13 +50,56 @@ window.addEventListener('scroll', function() {
 
 //開啟專案
 const showProjects = document.querySelectorAll('.project');
-
-showProjects.forEach(project => {
-    project.addEventListener('click', function(event) {
+showProjects.forEach((project, index) => {
+    project.addEventListener('click', function() {
+        const projectName = project.querySelector('.info > p').innerText;
         const popup = document.querySelector('.popup');
+        const projectNameElement = document.querySelector('.projectName > p');
+        projectNameElement.innerText = projectName;
+        
+        const allOuters = document.querySelectorAll('.outer');
+        allOuters.forEach(outer => {
+            outer.classList.remove('display');
+        })
+
+        if (allOuters[index]) {
+            allOuters[index].classList.add('display');
+        } else {
+            return;
+        }
+
         popup.classList.add('display');
     });
 });
+
+//前後一個專案
+let currentIndex = 0;
+const outers = document.querySelectorAll('.outer');
+const prevBtn = document.querySelector('.project-prevBtn');
+const nextBtn = document.querySelector('.project-nextBtn');
+
+function updateDisplay() {
+    outers.forEach((outers, index)=> {
+        outers.classList.toggle('display', index === currentIndex);
+    });
+
+    prevBtn.classList.toggle('eventNone', currentIndex === 0);
+    nextBtn.classList.toggle('eventNone', currentIndex === outers.length - 1);
+}
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateDisplay();
+    }
+});
+
+nextBtn.addEventListener('click', ()=> {
+    if(currentIndex < outers.length - 1){
+        currentIndex++;
+        updateDisplay();
+    }
+})
 
 //關閉專案
 const closePopup = document.querySelector('.close_popupBtn');

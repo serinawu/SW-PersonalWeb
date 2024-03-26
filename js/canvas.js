@@ -1,11 +1,11 @@
-var VELOCITY = 1;
-var PARTICLES = 20;
+const VELOCITY = 1;
+const PARTICLES = 20;
 
-var mouse = {x:0, y:0};
-var particles = [];
-var colors = [ "#000000","#4154f1","#4153f166" ];
-var canvas = document.getElementById('projector');
-var context;
+const mouse = {x:0, y:0};
+const particles = [];
+const colors = [ "#000000","#4154f1","#4153f166" ];
+const canvas = document.getElementById('projector');
+let context;
 			
 if (canvas && canvas.getContext) {
 	context = canvas.getContext('2d');

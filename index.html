@@ -16,8 +16,8 @@
         <script src="https://kit.fontawesome.com/2bd8048d04.js" crossorigin="anonymous"></script>
         <!-- Google fronts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Madimi+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Madimi+One&display=swap" rel="stylesheet">
     </head>
     <body>
         <!-- navbar -->
@@ -103,12 +103,6 @@
                     </div>
                     <div class="project">
                         <div class="info">
-                            <p>聊天室</p>
-                            <span>使用JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <div class="info">
                             <p>天氣預報</p>
                             <span>使用JavaScript以及搭配串接定位、天氣API</span>
                         </div>
@@ -123,6 +117,12 @@
                         <div class="info">
                             <p>求職網站</p>
                             <span>使用NUXT搭配Pinia狀態管理架設網站。版型也是我規劃設計的，雖然此專案最後終止了；從中學到很多！</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="info">
+                            <p>聊天室</p>
+                            <span>使用JavaScript</span>
                         </div>
                     </div>
                 </div>
@@ -297,7 +297,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="title-info-metaData-wrapper">
+                                <div class="title-info-meta-wrapper">
                                     <span class="title-info-metadata-item item-year">
                                         <span class="release_Date"></span>
                                     </span>
@@ -349,45 +349,44 @@
                             </section>
                         </div>
                     </div>
-                    <div class="outer weather display">
+                    <div class="outer weather">
                         <div class="main_wrap">
                             <div class="top">
                                 <div class="weather_logo">
                                     <i class="fa-solid fa-cloud-sun-rain"></i>
                                     <p>Weather io</p>
                                 </div>
-                                <div>
-                                    <label>
+                                <div data-search-view>
+                                    <label data-search-toggler>
                                         <i class="fa-solid fa-magnifying-glass"></i>
-                                        <input class="searchBar" placeholder="search city">
+                                        <input class="searchBar" placeholder="search city" data-search-field>
                                     </label>
-                                    <button type="button" class="current_locate">
+                                    <a href="#/current-location" class="current_locate" data-current-location-btn>
                                         <i class="fa-solid fa-location-crosshairs"></i>
-                                        Current Location
-                                    </button>
+                                        <p>Current Location</p>
+                                    </a>
+                                    <div class="search-result" data-search-result></div>
                                 </div>
                             </div>
-                            <div class="bottom">
-                                <div class="sideLeft">
-                                    <div class="nowBlock">
+                            <div class="bottom" data-container>
+                                <div class="sideLeft" data-today-block>
+                                    <div class="nowBlock" data-current-weather>
                                         <div class="column">
                                             <p>Now</p>
-                                            <span class="temperature">5</span>
-                                            <div class="weather_pic"></div>
-                                            <span class="weather-state">Broken Clouds</span>
-                                            <div class="row">
+                                            <span class="temperature">19&deg;<sup>c</sup></span>
+                                            <!-- <img src="../src/img/weather_icons/${icon}.png" class="weather_pic" alt="${description}"> -->
+                                            <span class="weather-state body-3">${description}</span>
+                                            <div class="row" data-today-block>
                                                 <i class="fa-regular fa-calendar"></i>
-                                                <span class="today">Thursday 22, Feb</span>
                                             </div>
-                                            <div class="row">
+                                            <div class="row" data-current-location>
                                                 <i class="fa-solid fa-location-dot"></i>
-                                                <span class="located">Taiwan, Taichung</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="fiveDays">
                                         <p>5 days Forecast</p>
-                                        <ul class="fiveDays_list">
+                                        <ul class="fiveDays_list" data-5-day-forecast>
                                             <li>
                                                 <div class="weather_group">
                                                     <i class="weather_img"></i>
@@ -433,72 +432,125 @@
                                 </div>
                                 <div class="sideRight">
                                     <div class="block">
-                                        <div class="wind_block">
+                                        <p class="todaysHighlight">Todays Highlight</p>
+                                        <div class="air_Block" data-airBlock>
+                                            <p class="title-2">Air Quality Index</p>
+                                        </div>
+                                        <div class="wind_group">
                                             <i class="fa-solid fa-wind"></i>
-                                            <p id="wind_speed">3.90</p>
-                                            <p id="wind_speed">7.75</p>
-                                            <p id="wind_speed">33.6</p>
-                                            <p id="wind_speed">38.6</p>
+                                            <p data-wind-PM>
+                                                <span class="title-2">PM2.5</span>
+                                                3.90
+                                            </p>
+                                            <p data-wind-SO2>
+                                                <span class="title-2">SO2</span>
+                                                7.75
+                                            </p>
+                                            <p data-wind-NO2>
+                                                <span class="title-2">NO2</span>
+                                                5.66
+                                            </p>
+                                            <p data-wind-O3>
+                                                <span class="title-2">O3</span>
+                                                26.1
+                                            </p>
                                         </div>
-                                        <div class="sunRise_block">
-                                            <i class="fa-regular fa-sun"></i>
-                                            <p id="sunrise_time">6:46</p>
+                                        <div class="sunset_group">
+                                            <p class="title-2">Sunrise & Sunset</p>
+                                            <div class="data_block">
+                                                <i class="fa-regular fa-sun"></i>
+                                                <p id="sunrise_time">
+                                                    <span class="title-2">Sunrise</span>
+                                                    6:46
+                                                </p>
+                                            </div>
+                                            <div class="data_block">
+                                                <i class="fa-regular fa-moon"></i>
+                                                <p id="sunset_time">
+                                                    <span class="title-2">Sunset</span>
+                                                    6:46
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="sunset_block">
-                                            <i class="fa-regular fa-moon"></i>
-                                            <p id="sunset_time">6:46</p>
+                                        <div>
+                                            <div class="data_block">
+                                                <i class="fa-solid fa-droplet"></i>
+                                                <span class="title-2">Humidity</span>
+                                                <p id="humidity_value" data-humidity>6:46</p>
+                                            </div>
                                         </div>
-                                        <div class="sunset_block">
-                                            <i class="fa-solid fa-droplet"></i>
-                                            <p id="sunset_time">6:46</p>
+                                        <div>
+                                            <div class="data_block">
+                                                <i class="fa-solid fa-water"></i>
+                                                <span class="title-2">Pressure</span>
+                                                <p id="sunset_time">1011<sup>h</sup>Pa</p>
+                                            </div>
                                         </div>
-                                        <div class="sunset_block">
-                                            <i class="fa-solid fa-water"></i>
-                                            <p id="sunset_time">6:46</p>
+                                        <div>
+                                            <div class="data_block">
+                                                <i class="fa-solid fa-temperature-quarter"></i>
+                                                <span class="title-2">Visibility</span>
+                                                <p id="sunset_time">6:46</p>
+                                            </div>
                                         </div>
-                                        <div class="sunset_block">
-                                            <i class="fa-regular fa-eye"></i>
-                                            <p id="sunset_time">6:46</p>
-                                        </div>
-                                        <div class="sunset_block">
-                                            <i class="fa-solid fa-temperature-quarter"></i>
-                                            <p id="sunset_time">6:46</p>
+                                        <div>
+                                            <div class="data_block">
+                                                <i class="fa-solid fa-temperature-quarter"></i>
+                                                <span class="title-2">Feels Like</span>
+                                                <p id="sunset_time">-41&deg;<sup>c</sup></p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="block">
                                         <p>Today at</p>
                                         <div class="group">
-                                            <p>9pm</p>
+                                            <p>6AM</p>
                                             <div class="weather_img"></div>
                                             <p>5</p>
                                         </div>
                                         <div class="group">
-                                            <p>9pm</p>
+                                            <p>9AM</p>
                                             <div class="weather_img"></div>
                                             <p>5</p>
                                         </div>
                                         <div class="group">
-                                            <p>9pm</p>
+                                            <p>12AM</p>
                                             <div class="weather_img"></div>
                                             <p>5</p>
                                         </div>
                                         <div class="group">
-                                            <p>9pm</p>
+                                            <p>3PM</p>
                                             <div class="weather_img"></div>
                                             <p>5</p>
                                         </div>
                                         <div class="group">
-                                            <p>9pm</p>
+                                            <p>6PM</p>
                                             <div class="weather_img"></div>
                                             <p>5</p>
                                         </div>
                                         <div class="group">
-                                            <p>9pm</p>
+                                            <p>9PM</p>
+                                            <div class="weather_img"></div>
+                                            <p>5</p>
+                                        </div>
+                                        <div class="group">
+                                            <p>12AM</p>
+                                            <div class="weather_img"></div>
+                                            <p>5</p>
+                                        </div>
+                                        <div class="group">
+                                            <p>3AM</p>
                                             <div class="weather_img"></div>
                                             <p>5</p>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="loading" data-loading></div>
+                            <div class="error-content" data-error-content>
+                                <h2 class="heading">404</h2>
+                                <p class="body-1">Page not found</p>
+                                <span class="btnType-1 close_popupBtn">Go Home</span>
                             </div>
                         </div>
                     </div>
@@ -509,6 +561,6 @@
         <script src="./js/canvas.js"></script>
         <script src="./js/main.js"></script>
         <script src="./js/movies.js"></script>
-        <script src="./js/weather.js"></script>
+        <script type="module" src="./js/weather.js"></script>
     </body>
 </html>

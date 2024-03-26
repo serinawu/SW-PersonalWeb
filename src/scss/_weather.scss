@@ -6,6 +6,7 @@
         background: #3d3d3d;
         margin: 0 auto;
         padding: 2vw;
+        position: relative;
         @include media(1024){
             width: 90%;
         }
@@ -51,12 +52,84 @@
                 width: 100%;
                 display: flex;
                 align-items: center;
+                position: relative;
+                @include media(1024){
+                    position: unset;
+                }
 
                 &:nth-of-type(1) {
                     width: 44%;
                     @include media(430){
                         width: auto;
                         margin: 2vw 0;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    @include media(430){
+                       display: grid;
+                       grid-template-columns: 85% 10%;
+                        gap: 2vw;
+                    }
+
+                    &.active {
+
+                        &>.search-result {
+                            width: 77%;
+                            display: block;
+                            background: #3c3d3c;
+                            position: absolute;
+                            top: 40px;
+                            left: 0;
+                            z-index: 999;
+                            @include media(1024){
+                                width: 64%;
+                            }
+                            @include media(430){
+                                width: 100%;
+                                height: 58vh;
+                                top: 78px;
+                            }
+
+                            ul {
+
+                                li {
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    padding: 15px;
+                                    transition: all 0.3s;
+                                    cursor: pointer;
+
+                                    &:hover,&:active,&.active {
+                                        background: #454545;
+                                        a {
+                                            background: #454545;
+                                        }
+                                    }
+
+                                    i {
+                                        color: #ffffff;
+                                        margin: 0 10px 0 0;
+                                    }
+
+                                    a {
+                                        width: 100%;
+                                        height: 100%;
+                                        transition: all 0.3s;
+
+                                        p {
+                                            color: #ffffff;
+                                            
+                                            &:nth-of-type(2){
+                                                color: #ababab;
+                                                font-size: 0.8rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -71,6 +144,7 @@
                         height: 3vh;
                     }
                     @include media(430){
+                        width: 100%;
                         height: 4vh;
                     }
                     @include media(375){
@@ -101,7 +175,7 @@
                     }
                 }
 
-                &>button {
+                &>.current_locate {
                     width: 19%;
                     height: 4.5vh;
                     flex-shrink: 0;
@@ -109,6 +183,7 @@
                     align-items: center;
                     justify-content: space-between;
                     background: #a491c3;
+                    color: #121215;
                     white-space: nowrap;
                     border-radius: 30vw;
                     padding: 0 1vw;
@@ -117,9 +192,8 @@
                         height: 3vh;
                     }
                     @include media(430){
-                        width: 32%;
-                        height: 4vh;
-                        white-space: wrap;
+                        width: 8vw;
+                        height: 8vw;
                     }
                     @include media(375){
                         height: 6vh;
@@ -129,6 +203,23 @@
                     &>i {
                         font-size: 1.185rem;
                         margin: 0 0.5% 0 0;
+                        @include media(430){
+                            margin: auto;
+                        }
+                    }
+
+                    &>p {
+                        @include media(430){
+                            display: none;
+                        }
+                    }
+                }
+
+                &>.search-result {
+                    display: none;
+                    width: 100%;
+                    @include media(430){
+                        grid-column-start: span 2;
                     }
                 }
             }
@@ -184,6 +275,13 @@
                             &>p {
                                 grid-column-start: span 2;
                                 margin: 0 0 1vw;
+                            }
+
+                            .weather_pic {
+                                width: 100%;
+                                height: auto;
+                                object-fit: contain;
+                                grid-column-start: 2;
                             }
     
                             .weather-state {
@@ -300,6 +398,14 @@
                         padding: 2vw;
                     }
 
+                    &>.todaysHighlight {
+                        grid-column-start: span 4;
+                    }
+
+                    .air_Block {
+                        grid-column-start: span 4;
+                    }
+
                     &:last-of-type {
                         grid-template-columns: repeat(8, 1fr);
                         margin: 0;
@@ -341,13 +447,13 @@
                         }
                     }
 
-                    &>div {
-                        width: 100%;
+                    div {
                         display: flex;
                         align-items: center;
 
-                        &.wind_block {
+                        &.wind_group {
                             grid-column-start: span 2;
+                            justify-content: space-between;
                             @include media(430){
                                 display: grid;
                                 grid-template-columns: 20% 40% 40%;
@@ -357,6 +463,40 @@
                                 @include media(430){
                                     grid-row-start: span 2;
                                 }
+                            }
+                        }
+
+                        &.sunset_group {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-column-start: span 2;
+
+                            &>.title-2 {
+                                grid-column-start: span 2;
+                            }
+                        }
+
+
+                        .data_block {
+                            display: grid;
+                            grid-template-columns: 20% 74%;
+                            gap: 10px;
+                        
+
+                            &>i {
+                                grid-row-start: span 2;
+                                align-self: center;
+                            }
+
+                            &>.title-2 {
+                                grid-column-start: 2;
+                                align-self: flex-start;
+                            }
+
+                            &>p {
+                                grid-column-start: 2;
+                                align-self: flex-start;
+                                text-align: center;
                             }
                         }
                     }
@@ -378,6 +518,11 @@
                     @include media(430){
                         font-size: 3.8vw;
                     }
+
+                    &.title-2 {
+                        color: #b8b8b8;
+                        font-size: 1rem;
+                    }
                 }
 
                 span {
@@ -387,7 +532,62 @@
                         color: #ffffff;
                         font-size: 4rem;
                     }
+
+                    &.title-2 {
+                        display: block;
+                        font-size: 0.8rem;
+                        text-align: center;
+                    }
                 }
+            }
+        }
+
+        //loading 狀態
+        .loading {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+
+            &::before {
+                content: "";
+                width: 48px;
+                height: 48px;
+                border:  2px solid #ffffff;
+                border-block-start-color: transparent;
+                border-radius: 30px;
+                animation: loading 500ms linear infinite;
+            }
+        }
+
+        //error404 狀態
+        &>.error-content {
+            width: 100%;
+            height: 100%;
+            background: #2a2a2a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            span {
+                padding: 10px 15px;
+                margin: 20px auto 0;
+                cursor: pointer;
             }
         }
     }
